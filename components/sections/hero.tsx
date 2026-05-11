@@ -10,7 +10,7 @@ import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 
 const PROOF_STRIP = [
   { value: "195.4 V", label: "Peak Voc, 4 wt%" },
-  { value: "79%",     label: "Gain vs pure PDMS" },
+  { value: "~79%",    label: "Gain vs pure PDMS" },
   { value: "5",       label: "Sensors per glove" },
   { value: "500",     label: "Cycles durability" },
   { value: "0",       label: "Batteries" },

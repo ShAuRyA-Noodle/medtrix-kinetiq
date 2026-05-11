@@ -37,12 +37,12 @@ export default function Home() {
           id="founder"
           eyebrow="Founder"
           title="Dr. Akshpreet Kaur."
-          description="PhD, UIET Panjab University. Visvesvaraya Postdoctoral Fellow, DST Government of India. First author on 9 SCIE-indexed publications."
+          description="PhD, UIET Panjab University. Visvesvaraya Postdoctoral Fellow, DST Government of India. Author across 9 SCIE-indexed publications on triboelectric nanogenerators for biomedical applications."
         />
         <SectionPlaceholder
           id="press"
           eyebrow="Press and recognitions"
-          title="Recognised by the Government of India, Oxford, and Cambridge."
+          title="First Prize from the Government of India. Platforms at Oxford and Cambridge."
         />
         <SectionPlaceholder
           id="contact"

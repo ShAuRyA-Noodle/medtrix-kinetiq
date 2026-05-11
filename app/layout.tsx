@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Medtrix Technologies — Self-powered triboelectric sensors for rehabilitation",
+    default: "Medtrix Technologies: Self-powered triboelectric sensors for rehabilitation",
     template: "%s · Medtrix",
   },
   description:
