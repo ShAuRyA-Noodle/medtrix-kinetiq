@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 
 const SPECS = [
@@ -45,11 +46,9 @@ const USE_CASES = [
 
 export function Product() {
   return (
-    <section
-      id="product"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="product" variant="sunken" divider>
       <SectionHeader
+        sectionNumber="03"
         eyebrow="Product"
         title="The Rehab Glove."
         description="Five smart wearable triboelectric nanogenerators on the dorsum of a fabric glove. Each unit harvests energy from finger flexion and reports bend angle and grip strength in real time. No battery. No wires running off the hand."
@@ -161,6 +160,6 @@ export function Product() {
           ))}
         </ul>
       </motion.div>
-    </section>
+    </Surface>
   );
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { fadeUp, stagger } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 
@@ -72,11 +73,9 @@ const STATUS_LABEL = {
 
 export function Roadmap() {
   return (
-    <section
-      id="roadmap"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="roadmap" variant="sunken" divider>
       <SectionHeader
+        sectionNumber="10"
         eyebrow="Roadmap"
         title="From lab-validated device to clinical deployment."
         description="Six rungs of the technology readiness ladder. Each milestone is defined by an observable outcome, not a quarter on a calendar."
@@ -151,6 +150,6 @@ export function Roadmap() {
           </motion.li>
         ))}
       </motion.ol>
-    </section>
+    </Surface>
   );
 }

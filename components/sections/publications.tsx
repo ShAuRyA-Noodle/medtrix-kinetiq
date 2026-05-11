@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import { PUBLICATIONS, SCHOLAR_METRICS } from "@/content/publications";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
@@ -12,11 +13,9 @@ export function Publications() {
   const sorted = [...PUBLICATIONS].sort((a, b) => b.year - a.year);
 
   return (
-    <section
-      id="publications"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="publications" variant="default" divider>
       <SectionHeader
+        sectionNumber="06"
         eyebrow="Publications"
         title="Nine peer-reviewed papers. Every number on this page is in one of them."
         description="Eight SCIE-indexed journal publications across Elsevier, Royal Society of Chemistry, Springer, World Scientific, and Taylor and Francis, plus one paper under review."
@@ -131,7 +130,7 @@ export function Publications() {
           />
         </Link>
       </motion.div>
-    </section>
+    </Surface>
   );
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { ProofTile } from "@/components/ui/proof-tile";
 
 const TILES = [
@@ -52,11 +53,9 @@ const TILES = [
 
 export function Proof() {
   return (
-    <section
-      id="proof"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="proof" variant="default" divider>
       <SectionHeader
+        sectionNumber="04"
         eyebrow="Proof"
         title="Numbers we publish, sourced verbatim."
         description="Every figure on this page is taken directly from peer-reviewed publications. Hover any tile to see the exact citation."
@@ -75,6 +74,6 @@ export function Proof() {
           />
         ))}
       </div>
-    </section>
+    </Surface>
   );
 }

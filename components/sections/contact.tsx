@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 import { cn } from "@/lib/cn";
@@ -43,14 +44,12 @@ const DOORS: Door[] = [
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="contact" variant="accent-bottom" divider>
       <SectionHeader
+        sectionNumber="12"
         eyebrow="Contact"
         title="Three doors. One inbox."
-        description="Pick the door that matches your intent. Every form lands in the same founder inbox."
+        description="Pick the door that matches your intent. Every message lands in the same founder inbox."
       />
 
       <motion.ul
@@ -108,6 +107,6 @@ export function Contact() {
           this date. Every inbound message is read by the founder.
         </p>
       </motion.div>
-    </section>
+    </Surface>
   );
 }

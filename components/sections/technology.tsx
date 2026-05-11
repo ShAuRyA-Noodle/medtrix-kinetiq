@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 
@@ -43,11 +44,9 @@ const ARCHITECTURES = [
 
 export function Technology() {
   return (
-    <section
-      id="technology"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="technology" variant="default" divider>
       <SectionHeader
+        sectionNumber="02"
         eyebrow="Technology"
         title="A square of rubber. A web of carbon. A medical device that never sees a charger."
         description="The triboelectric effect converts everyday mechanical motion into electricity through contact electrification and electrostatic induction. We engineered the dielectric down to its weight ratio."
@@ -114,7 +113,7 @@ export function Technology() {
           </motion.div>
         ))}
       </motion.div>
-    </section>
+    </Surface>
   );
 }
 

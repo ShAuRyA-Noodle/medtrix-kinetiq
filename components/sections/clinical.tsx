@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 
 const PARTNERS = [
@@ -25,11 +26,9 @@ const PARTNERS = [
 
 export function Clinical() {
   return (
-    <section
-      id="clinical"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="clinical" variant="sunken" divider>
       <SectionHeader
+        sectionNumber="05"
         eyebrow="Clinical and research collaborators"
         title="Co-developed with hospitals and labs that publish."
         description="Every Medtrix paper carries co-authors from premier medical and engineering institutions. The product is grounded in real clinical context, not a marketing claim."
@@ -97,6 +96,6 @@ export function Clinical() {
         peer-reviewed papers cited on this page. Individual collaborators are not named
         on the public site pending consent.
       </motion.p>
-    </section>
+    </Surface>
   );
 }

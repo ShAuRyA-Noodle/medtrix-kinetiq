@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { BatteryIcon, ClipboardIcon, PlugsIcon } from "@/components/ui/icons";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { fadeUp, stagger } from "@/lib/motion";
 
 const CARDS = [
@@ -31,11 +32,9 @@ const CARDS = [
 
 export function Problem() {
   return (
-    <section
-      id="problem"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="problem" variant="sunken" withGrid divider>
       <SectionHeader
+        sectionNumber="01"
         eyebrow="The problem"
         title="Rehab data should never depend on a charger."
         description="Three friction points break continuous care today. Self-powered sensing closes all three."
@@ -67,6 +66,6 @@ export function Problem() {
           </motion.li>
         ))}
       </motion.ul>
-    </section>
+    </Surface>
   );
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { RECOGNITIONS } from "@/content/recognitions";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 import { cn } from "@/lib/cn";
@@ -22,11 +23,9 @@ const CATEGORY_LABEL = {
 
 export function Recognitions() {
   return (
-    <section
-      id="press"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="press" variant="sunken" divider>
       <SectionHeader
+        sectionNumber="07"
         eyebrow="Press and recognitions"
         title="Funded by DST. Platformed at Oxford and Cambridge. First Prize from the Government of India."
         description="A reverse-chronological record of awards, talks, exchanges, and platforms that shaped the science behind Medtrix."
@@ -96,6 +95,6 @@ export function Recognitions() {
       >
         Source · Akshpreet Kaur CV, May 2026
       </motion.p>
-    </section>
+    </Surface>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Surface } from "@/components/ui/surface";
 import { EASE_OUT_QUART } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 
@@ -27,21 +28,15 @@ const QA = [
     q: "Are you raising or partnering?",
     a: "Open to early investor conversations and clinical partner inquiries through the Contact section. The product is pre-revenue and pre-clinical; expectations are calibrated accordingly.",
   },
-  {
-    q: "Where is Medtrix based?",
-    a: "Medtrix Technologies Pvt. Ltd. is registered in India. Operations are co-located with the founder's Visvesvaraya postdoctoral fellowship at Punjabi University, Patiala, Punjab.",
-  },
 ];
 
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section
-      id="faq"
-      className="relative mx-auto w-full max-w-[var(--container)] px-6 py-32 md:px-10 md:py-40"
-    >
+    <Surface id="faq" variant="default" divider>
       <SectionHeader
+        sectionNumber="11"
         eyebrow="Frequently asked"
         title="What investors, clinicians, and partners usually ask first."
       />
@@ -107,6 +102,6 @@ export function Faq() {
           );
         })}
       </ul>
-    </section>
+    </Surface>
   );
 }
