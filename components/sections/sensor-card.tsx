@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import { EASE_OUT_QUART } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 
-const FINGERS = [
-  { name: "Thumb",  voltage: "1.14 V", path: "M2 18 L18 14 L34 12 L50 10 L66 12 L82 14 L98 16 L114 14 L130 12 L146 10 L162 12 L178 14 L194 18" },
-  { name: "Index",  voltage: "1.26 V", path: "M2 16 L18 10 L34 6 L50 4 L66 6 L82 10 L98 14 L114 10 L130 6 L146 4 L162 6 L178 10 L194 16" },
-  { name: "Middle", voltage: "1.36 V", path: "M2 14 L18 8 L34 4 L50 2 L66 4 L82 8 L98 12 L114 8 L130 4 L146 2 L162 4 L178 8 L194 14" },
-  { name: "Ring",   voltage: "1.20 V", path: "M2 16 L18 12 L34 8 L50 6 L66 8 L82 12 L98 14 L114 12 L130 8 L146 6 L162 8 L178 12 L194 16" },
-  { name: "Little", voltage: "1.08 V", path: "M2 18 L18 16 L34 14 L50 12 L66 14 L82 16 L98 18 L114 16 L130 14 L146 12 L162 14 L178 16 L194 18" },
+const PEAK_MAX = 195.4;
+
+const MATERIAL_ROWS = [
+  { label: "Pure PDMS",  weight: "0 wt%", voltage: 39.9,  optimal: false },
+  { label: "MWCNT-PDMS", weight: "2 wt%", voltage: 79.0,  optimal: false },
+  { label: "MWCNT-PDMS", weight: "4 wt%", voltage: 195.4, optimal: true  },
+  { label: "MWCNT-PDMS", weight: "6 wt%", voltage: 42.4,  optimal: false },
 ];
 
 export function SensorCard({ className }: { className?: string }) {
@@ -23,35 +24,39 @@ export function SensorCard({ className }: { className?: string }) {
         className,
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <motion.span
-            animate={{ opacity: [0.4, 1, 0.4] }}
-            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          <span
             className="inline-block size-2 rounded-full bg-accent"
             aria-hidden
           />
-          <span className="text-mono-eyebrow text-fg-subtle">Live · SW-TENG · Rehab Glove</span>
+          <span className="text-mono-eyebrow text-fg-subtle">
+            Material study · Peak-to-peak Voc
+          </span>
         </div>
-        <span className="text-mono-eyebrow text-fg-subtle">4 wt% MWCNT-PDMS</span>
+        <span className="text-mono-eyebrow text-fg-subtle">SW-TENG</span>
       </div>
 
-      <ul className="mt-7 divide-y divide-border">
-        {FINGERS.map((f, i) => (
-          <FingerRow key={f.name} index={i} {...f} />
+      <ul className="mt-7 space-y-4">
+        {MATERIAL_ROWS.map((row, i) => (
+          <MaterialRow key={row.weight} index={i} {...row} />
         ))}
       </ul>
 
-      <div className="mt-7 flex items-baseline justify-between">
+      <div className="mt-7 grid grid-cols-2 gap-x-6 border-t border-border pt-5">
         <div>
-          <div className="text-mono-eyebrow text-fg-subtle">Peak Voc, 4 wt% device</div>
-          <div className="mt-1 text-[28px] font-semibold tracking-tight text-fg">195.4 V</div>
+          <div className="text-mono-eyebrow text-fg-subtle">Durability tested</div>
+          <div className="mt-1 text-[22px] font-semibold tracking-tight text-fg">500 cycles</div>
         </div>
         <div className="text-right">
-          <div className="text-mono-eyebrow text-fg-subtle">Durability tested</div>
-          <div className="mt-1 text-[28px] font-semibold tracking-tight text-fg">5,000 cycles</div>
+          <div className="text-mono-eyebrow text-fg-subtle">10 µF cap to 5 V</div>
+          <div className="mt-1 text-[22px] font-semibold tracking-tight text-fg">~27 s</div>
         </div>
       </div>
+
+      <p className="mt-5 text-[10.5px] uppercase tracking-[0.14em] text-fg-subtle">
+        Source: Kaur et al., Microelectronic Engineering 275 (2023) 111992
+      </p>
 
       <div
         aria-hidden
@@ -65,61 +70,48 @@ export function SensorCard({ className }: { className?: string }) {
   );
 }
 
-type FingerRowProps = {
-  name: string;
-  voltage: string;
-  path: string;
+type MaterialRowProps = {
+  label: string;
+  weight: string;
+  voltage: number;
+  optimal: boolean;
   index: number;
 };
 
-function FingerRow({ name, voltage, path, index }: FingerRowProps) {
+function MaterialRow({ label, weight, voltage, optimal, index }: MaterialRowProps) {
+  const pct = Math.min(100, (voltage / PEAK_MAX) * 100);
   return (
-    <li className="grid grid-cols-[72px_1fr_64px] items-center gap-4 py-3">
-      <span className="text-[12px] uppercase tracking-[0.14em] text-fg-subtle">{name}</span>
-      <svg
-        viewBox="0 0 196 22"
-        className="h-5 w-full overflow-visible"
-        aria-hidden
-      >
-        <motion.path
-          d={path}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.6}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="text-accent"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
+    <li className="grid grid-cols-[88px_1fr_76px] items-center gap-3">
+      <div className="flex flex-col">
+        <span className="text-[12px] font-medium tracking-tight text-fg">{weight}</span>
+        <span className="text-[10.5px] uppercase tracking-[0.14em] text-fg-subtle">{label}</span>
+      </div>
+      <div className="relative h-2 overflow-hidden rounded-full bg-bg-sunken">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: `${pct}%` }}
           transition={{
-            duration: 1.4,
+            duration: 1.1,
             delay: 0.7 + index * 0.12,
             ease: EASE_OUT_QUART,
           }}
+          className={cn(
+            "absolute inset-y-0 left-0 rounded-full",
+            optimal ? "bg-accent" : "bg-fg/60",
+          )}
         />
-        <motion.circle
-          r={2.2}
-          fill="currentColor"
-          className="text-accent"
-          initial={{ opacity: 0 }}
-          animate={{
-            cx: [2, 50, 98, 146, 194],
-            cy: [18, 6, 12, 6, 18],
-            opacity: [0, 1, 1, 1, 0],
-          }}
-          transition={{
-            duration: 3.6,
-            delay: 1.6 + index * 0.18,
-            repeat: Infinity,
-            repeatDelay: 1.2,
-            ease: "easeInOut",
-            times: [0, 0.25, 0.5, 0.75, 1],
-          }}
-        />
-      </svg>
-      <span className="text-right text-[14px] font-medium tabular-nums tracking-tight text-fg">
-        {voltage}
-      </span>
+      </div>
+      <div className="flex items-center justify-end gap-1.5 text-right">
+        <span className="text-[14px] font-semibold tabular-nums tracking-tight text-fg">
+          {voltage.toFixed(1)}
+        </span>
+        <span className="text-[11px] text-fg-subtle">V</span>
+        {optimal && (
+          <span className="ml-1 inline-flex items-center rounded-full bg-accent-soft px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-[0.1em] text-accent-deep">
+            opt
+          </span>
+        )}
+      </div>
     </li>
   );
 }

@@ -9,10 +9,10 @@ import { SensorCard } from "@/components/sections/sensor-card";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 
 const PROOF_STRIP = [
-  { value: "195.4 V", label: "Peak Voc" },
+  { value: "195.4 V", label: "Peak Voc, 4 wt%" },
   { value: "79%",     label: "Gain vs pure PDMS" },
   { value: "5",       label: "Sensors per glove" },
-  { value: "5,000",   label: "Cycles durability" },
+  { value: "500",     label: "Cycles durability" },
   { value: "0",       label: "Batteries" },
 ];
 
