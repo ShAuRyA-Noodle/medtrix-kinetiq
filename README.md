@@ -22,9 +22,9 @@ All performance figures on the site are pulled verbatim from peer-reviewed publi
 
 | Layer | Choice |
 | --- | --- |
-| Framework | Next.js 16 (App Router, Turbopack) |
-| Runtime | React 19.2 |
-| Styling | Tailwind CSS v4 (CSS-first tokens via `@theme inline`) |
+| Framework | Next.js 15 (App Router) |
+| Runtime | React 18.3 |
+| Styling | Tailwind CSS v3 (design tokens via `tailwind.config.ts`) |
 | Motion | Framer Motion + Lenis smooth scroll |
 | Fonts | Geist Sans + Geist Mono via `next/font/google` |
 | Icons | Hand-rolled inline SVG primitives (zero icon-library bloat) |
@@ -39,7 +39,7 @@ All performance figures on the site are pulled verbatim from peer-reviewed publi
 # install
 npm install
 
-# dev (Turbopack, HMR)
+# dev (HMR)
 npm run dev
 
 # production build
@@ -83,7 +83,7 @@ web/
 ├── public/
 │   ├── glove/glove-hero.jpg   product photograph
 │   └── preview-hero-1440.png  README hero image
-├── next.config.ts             Turbopack root + optimizePackageImports
+├── next.config.ts             optimizePackageImports for framer-motion + lenis
 ├── postcss.config.mjs
 └── tsconfig.json
 ```
