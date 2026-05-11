@@ -1,5 +1,9 @@
 import { Nav } from "@/components/sections/nav";
 import { Hero } from "@/components/sections/hero";
+import { Problem } from "@/components/sections/problem";
+import { Technology } from "@/components/sections/technology";
+import { Product } from "@/components/sections/product";
+import { Proof } from "@/components/sections/proof";
 import { SectionPlaceholder } from "@/components/sections/section-placeholder";
 import { FooterMini } from "@/components/sections/footer-mini";
 
@@ -9,30 +13,10 @@ export default function Home() {
       <Nav />
       <main className="relative z-10">
         <Hero />
-        <SectionPlaceholder
-          id="problem"
-          eyebrow="The problem"
-          title="Rehab data should never depend on a charger."
-          description="Most rehab patients are still measured by a clipboard. Wearables die in days. Implants need surgery to swap a battery. The body is already producing the energy. We just had to learn how to harvest it."
-        />
-        <SectionPlaceholder
-          id="technology"
-          eyebrow="Technology"
-          title="Triboelectric nanogenerators built on MWCNT-PDMS at 4 wt%."
-          description="Multiwalled carbon nanotubes dispersed at 4 wt% in a PDMS matrix. The material was selected experimentally as the optimum across electrical output and mechanical compliance."
-        />
-        <SectionPlaceholder
-          id="product"
-          eyebrow="Product"
-          title="The Rehab Glove."
-          description="Five smart wearable triboelectric nanogenerators on the dorsum of a fabric glove. Each unit detects bend angle and grip strength in real time, with no battery and no wires."
-        />
-        <SectionPlaceholder
-          id="proof"
-          eyebrow="Proof"
-          title="Numbers we publish, sourced verbatim."
-          description="Every figure on this page is taken directly from peer-reviewed publications. Hover any number to see its source."
-        />
+        <Problem />
+        <Technology />
+        <Product />
+        <Proof />
         <SectionPlaceholder
           id="founder"
           eyebrow="Founder"
