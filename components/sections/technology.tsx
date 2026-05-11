@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Surface } from "@/components/ui/surface";
+import { TriboCycle } from "@/components/ui/tribo-cycle";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 import { cn } from "@/lib/cn";
 
@@ -86,11 +87,38 @@ export function Technology() {
       </div>
 
       <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.9, ease: EASE_OUT_QUART }}
+        className="mt-16 overflow-hidden rounded-[var(--radius-2xl)] bg-bg-elevated p-8 ring-1 ring-inset ring-border md:mt-20 md:p-10"
+      >
+        <div className="flex items-baseline justify-between">
+          <div>
+            <span className="text-mono-eyebrow text-fg-subtle">Mechanism</span>
+            <h3 className="heading-display mt-2 text-[clamp(1.4rem,2.2vw,1.9rem)] text-fg">
+              Contact, separation, repeat.
+            </h3>
+          </div>
+          <span className="text-mono-eyebrow text-fg-subtle">VCS mode</span>
+        </div>
+        <p className="mt-3 max-w-2xl text-[14.5px] leading-[1.55] text-fg-muted">
+          The MWCNT-PDMS dielectric is paired against an aluminium foil tribopositive
+          layer. When the user flexes a finger, the two layers touch, charges transfer
+          via contact electrification, and electrostatic induction drives current through
+          the external circuit each time they separate.
+        </p>
+        <div className="mt-8">
+          <TriboCycle />
+        </div>
+      </motion.div>
+
+      <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={stagger(0.12, 0.05)}
-        className="mt-16 grid grid-cols-1 gap-5 md:mt-20 md:grid-cols-2"
+        className="mt-10 grid grid-cols-1 gap-5 md:mt-12 md:grid-cols-2"
       >
         {ARCHITECTURES.map((a) => (
           <motion.div

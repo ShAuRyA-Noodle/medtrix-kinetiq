@@ -124,9 +124,9 @@ function Logomark() {
     >
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
         <path
-          d="M2 11 L2 3 L7 8 L12 3 L12 11"
+          d="M0.5 11 L2 7 L3 11 L4.5 4 L5.5 11 L7 2 L8.5 11 L9.5 4 L11 11 L12 7 L13.5 11"
           stroke="currentColor"
-          strokeWidth="1.6"
+          strokeWidth="1.3"
           strokeLinecap="round"
           strokeLinejoin="round"
           className="text-[color:var(--bg-ink)]"

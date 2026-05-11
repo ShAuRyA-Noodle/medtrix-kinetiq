@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Surface } from "@/components/ui/surface";
+import { GloveMap } from "@/components/ui/glove-map";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 
 const SPECS = [
@@ -55,6 +56,33 @@ export function Product() {
       />
 
       <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 1, ease: EASE_OUT_QUART }}
+          className="lg:col-span-5"
+        >
+          <div className="relative overflow-hidden rounded-[var(--radius-2xl)] bg-bg-elevated p-7 ring-1 ring-inset ring-border md:p-9">
+            <div className="flex items-center justify-between">
+              <span className="text-mono-eyebrow text-fg-subtle">Schematic, dorsal view</span>
+              <span className="text-mono-eyebrow text-fg-subtle">5 SW-TENGs</span>
+            </div>
+            <GloveMap className="mt-6" />
+            <p className="mt-7 text-[11px] uppercase leading-relaxed tracking-[0.14em] text-fg-subtle">
+              Bend angles per Paper 2 Fig 7(e). Schematic only, not a manufacturing drawing.
+            </p>
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 top-0 h-px"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--accent) 60%, transparent) 50%, transparent 100%)",
+              }}
+            />
+          </div>
+        </motion.div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
