@@ -189,7 +189,7 @@ export function Hero() {
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
             className="grid size-8 place-items-center rounded-full ring-1 ring-inset ring-border"
           >
-            <ArrowDownIcon size={14} weight="bold" />
+            <ArrowDownIcon size={14} />
           </motion.span>
         </motion.a>
       </div>
