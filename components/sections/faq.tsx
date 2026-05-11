@@ -13,7 +13,7 @@ const QA = [
   },
   {
     q: "Where can I read the underlying science?",
-    a: "Every published paper is in the Publications section above, with its full citation and a direct DOI link. Two papers (Microelectronic Engineering 2023 and Sensors and Actuators A 2025) form the core IP behind the current product line.",
+    a: "Every published paper is in the Publications section above, with its full citation and a direct DOI link. Two papers (Microelectronic Engineering 2023 and Sensors and Actuators A 2025) form the scientific foundation of the current product line.",
   },
   {
     q: "How is this different from a piezoelectric sensor?",

@@ -136,7 +136,7 @@ function MaterialStack() {
         <StackLayer label="Top electrode" sub="Copper foil, current collector" thickness="thin" tone="dark" />
         <StackLayer label="MWCNT-PDMS dielectric" sub="4 wt% multiwalled carbon nanotubes, optimal nanocomposite" thickness="thick" tone="accent" badge="Optimum" />
         <StackLayer label="Spacer" sub="Air gap, contact-separation cycle" thickness="thin" tone="muted" />
-        <StackLayer label="Counter-tribo film" sub="Nylon film, low electronegativity partner" thickness="medium" tone="warm" />
+        <StackLayer label="Counter-tribo layer" sub="Aluminium foil, tribopositive partner against MWCNT-PDMS" thickness="medium" tone="warm" />
         <StackLayer label="Bottom electrode" sub="Copper foil, current collector" thickness="thin" tone="dark" />
       </div>
 

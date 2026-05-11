@@ -11,7 +11,7 @@ const CARDS = [
     metric: "600,000",
     metricLabel: "pacemakers per year",
     body:
-      "Every implanted pacemaker runs on a battery that dies in 7 to 10 years and requires another surgery to replace. Source: Hao et al. 2015, cited in Sensors and Actuators A 390 (2025) 116606.",
+      "Every implanted pacemaker runs on a battery that lasts about 7 to 10 years and then requires another surgery to swap. Source: Hao et al. 2015 (annual implant rate) and Mallela et al. 2004 (battery life), both cited in Sensors and Actuators A 390 (2025) 116606.",
   },
   {
     Icon: ClipboardIcon,

@@ -38,7 +38,7 @@ export function Founder() {
     >
       <SectionHeader
         eyebrow="Founder"
-        title="Dr. Akshpreet Kaur built the IP before building the company."
+        title="Dr. Akshpreet Kaur built the science before building the company."
       />
 
       <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
@@ -63,11 +63,11 @@ export function Founder() {
             variants={fadeUp}
             className="text-[18px] leading-[1.6] text-fg-muted text-pretty md:text-[19px]"
           >
-            Dr. Akshpreet Kaur is the founder and director of Medtrix Technologies. She
-            spent six years building the science of self-powered triboelectric nanogenerators
-            at UIET, Panjab University, co-supervised by the Department of Cardiology at
-            PGIMER Chandigarh. Two of her first-author papers are the direct basis for the
-            Medtrix product line.
+            Dr. Akshpreet Kaur is the founder and director of Medtrix Technologies. From
+            December 2019 to September 2025 she built the science of self-powered triboelectric
+            nanogenerators at UIET, Panjab University, co-supervised by the Department of
+            Cardiology at PGIMER Chandigarh. Two of her first-author papers are the direct
+            basis for the Medtrix product line.
           </motion.p>
 
           <motion.p

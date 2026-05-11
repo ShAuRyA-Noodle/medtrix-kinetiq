@@ -105,7 +105,7 @@ export function Contact() {
         </div>
         <p className="text-[12.5px] leading-relaxed text-fg-subtle md:max-w-md md:text-right">
           Research-grade prototype, not a medical device under any regulatory framework as of
-          this date. Responses inside seven working days.
+          this date. Every inbound message is read by the founder.
         </p>
       </motion.div>
     </section>

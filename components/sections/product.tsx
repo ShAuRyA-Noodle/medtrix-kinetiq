@@ -5,12 +5,12 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { fadeUp, stagger, EASE_OUT_QUART } from "@/lib/motion";
 
 const SPECS = [
-  { label: "Sensors per glove", value: "5", note: "One per finger, on the dorsum" },
-  { label: "Sensor footprint",  value: "6 × 6 × 3.2",   unit: "cm",  note: "Per-unit dimensions" },
-  { label: "Detected bend",     value: "30 · 60 · 90",  unit: "deg", note: "Angles characterised in Fig 7(e)" },
-  { label: "Grip states",       value: "3",             note: "No grip, low grip, high grip (Fig 7f)" },
-  { label: "Material",          value: "4 wt%",         note: "MWCNT-PDMS, peak-Voc optimum" },
-  { label: "Source layer",      value: "Nylon",         note: "Counter-tribo film against MWCNT-PDMS" },
+  { label: "Sensors per glove", value: "5",            note: "One per finger, on the dorsum" },
+  { label: "Sensor footprint",  value: "6 × 6",        unit: "cm",  note: "Per-unit dimensions, 3.2 mm thick" },
+  { label: "Detected bend",     value: "30 · 60 · 90", unit: "deg", note: "Angles characterised in Fig 7(e)" },
+  { label: "Grip states",       value: "3",            note: "No grip, low grip, high grip (Fig 7f)" },
+  { label: "Material",          value: "4 wt%",        note: "MWCNT-PDMS, peak-Voc optimum" },
+  { label: "Counter-tribo",     value: "Al foil",      note: "Aluminium foil, tribopositive against MWCNT-PDMS" },
 ];
 
 const DEMOS = [
@@ -22,9 +22,9 @@ const DEMOS = [
   },
   {
     title: "Pulse sensor",
-    body: "Driven from the same capacitor bank, demonstrating multi-device powering from finger tapping alone.",
-    metric: "5",
-    metricLabel: "self-powered loads",
+    body: "Driven from the same capacitor bank as the thermometer, demonstrating multi-device powering from finger tapping alone.",
+    metric: "2",
+    metricLabel: "loads demonstrated",
   },
 ];
 

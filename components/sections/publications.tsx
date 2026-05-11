@@ -19,7 +19,7 @@ export function Publications() {
       <SectionHeader
         eyebrow="Publications"
         title="Nine peer-reviewed papers. Every number on this page is in one of them."
-        description="Eight SCIE-indexed journal publications across Elsevier, Royal Society of Chemistry, Springer, and Taylor and Francis, plus one paper under review."
+        description="Eight SCIE-indexed journal publications across Elsevier, Royal Society of Chemistry, Springer, World Scientific, and Taylor and Francis, plus one paper under review."
       />
 
       <motion.div
