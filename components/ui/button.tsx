@@ -7,7 +7,8 @@ import { SPRING_SNAPPY } from "@/lib/motion";
 
 type Variant = "primary" | "secondary";
 
-type ButtonProps = HTMLMotionProps<"button"> & {
+type ButtonProps = Omit<HTMLMotionProps<"button">, "children"> & {
+  children?: React.ReactNode;
   variant?: Variant;
   withArrow?: boolean;
 };

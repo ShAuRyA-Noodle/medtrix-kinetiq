@@ -3,7 +3,8 @@
 import { motion, type HTMLMotionProps } from "framer-motion";
 import { fadeUp } from "@/lib/motion";
 
-type InViewProps = HTMLMotionProps<"div"> & {
+type InViewProps = Omit<HTMLMotionProps<"div">, "children"> & {
+  children?: React.ReactNode;
   amount?: number;
   delay?: number;
 };
