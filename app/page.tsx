@@ -8,7 +8,10 @@ import { Clinical } from "@/components/sections/clinical";
 import { Publications } from "@/components/sections/publications";
 import { Recognitions } from "@/components/sections/recognitions";
 import { Market } from "@/components/sections/market";
-import { SectionPlaceholder } from "@/components/sections/section-placeholder";
+import { Founder } from "@/components/sections/founder";
+import { Roadmap } from "@/components/sections/roadmap";
+import { Faq } from "@/components/sections/faq";
+import { Contact } from "@/components/sections/contact";
 import { FooterMini } from "@/components/sections/footer-mini";
 
 export default function Home() {
@@ -25,18 +28,10 @@ export default function Home() {
         <Publications />
         <Recognitions />
         <Market />
-        <SectionPlaceholder
-          id="founder"
-          eyebrow="Founder"
-          title="Dr. Akshpreet Kaur."
-          description="PhD, UIET Panjab University. Visvesvaraya Postdoctoral Fellow, DST Government of India. Author across 9 SCIE-indexed publications on triboelectric nanogenerators for biomedical applications."
-        />
-        <SectionPlaceholder
-          id="contact"
-          eyebrow="Contact"
-          title="Pilot, partner, or invest."
-          description="Three doors. One inbox. Use the form that matches your intent."
-        />
+        <Founder />
+        <Roadmap />
+        <Faq />
+        <Contact />
       </main>
       <FooterMini />
     </>
