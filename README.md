@@ -1,6 +1,6 @@
-# Medtrix Technologies
+# Medtrix Kinetiq
 
-Self-powered triboelectric sensors for rehabilitation. The landing page for **Medtrix Technologies Pvt. Ltd**, an Indian deep-tech startup founded by Dr. Akshpreet Kaur, building rehab-grade wearables that run on the patient's own motion.
+The landing page for **Medtrix Technologies Pvt. Ltd**, an Indian deep-tech startup founded by Dr. Akshpreet Kaur, building rehab-grade wearables that run on the patient's own motion.
 
 ![Medtrix hero](./public/preview-hero-1440.png)
 
@@ -58,25 +58,27 @@ The dev server is light. If you run into RAM pressure on small machines, prefer 
 ## Project structure
 
 ```
-web/
+.
 ├── app/
 │   ├── globals.css            design tokens, grain texture, Lenis CSS hooks
 │   ├── layout.tsx             root layout, Geist fonts, Lenis provider, metadata
-│   └── page.tsx               composes Nav + Hero + remaining sections
+│   └── page.tsx               composes Nav, Hero, and the section sequence
 ├── components/
 │   ├── motion/
+│   │   ├── in-view.tsx        viewport-triggered reveal wrapper
 │   │   └── word-reveal.tsx    word-by-word fade with spring physics
 │   ├── providers/
 │   │   └── lenis-provider.tsx Lenis init with reduced-motion guard
-│   ├── sections/
-│   │   ├── nav.tsx            glass nav, scroll-aware blur, mobile sheet
-│   │   ├── hero.tsx           asymmetric hero, glove visual, spec callouts
-│   │   ├── section-placeholder.tsx
-│   │   └── footer-mini.tsx    legal, socials, disclaimer
-│   └── ui/
-│       ├── button.tsx         spring-physics primary + secondary
-│       ├── eyebrow.tsx        mono uppercase chip
-│       └── icons.tsx          inline SVG icon primitives
+│   ├── sections/              one file per page section (hero, problem,
+│   │                          technology, product, proof, clinical,
+│   │                          publications, recognitions, market, founder,
+│   │                          roadmap, faq, contact, nav, footer)
+│   └── ui/                    primitives: button, eyebrow, surface,
+│                              section-header, proof-tile, glove-map,
+│                              tribo-cycle, icons
+├── content/
+│   ├── publications.ts        peer-reviewed paper list
+│   └── recognitions.ts        awards and honours
 ├── lib/
 │   ├── cn.ts                  clsx + tailwind-merge helper
 │   └── motion.ts              shared spring presets and variants
@@ -102,7 +104,7 @@ Two peer-reviewed Elsevier papers are the basis for every number on this site. B
 Key public metrics (all sourced from the papers above):
 
 - Peak open circuit voltage of the rehab glove SW-TENG: **195.4 V** at 4 wt% MWCNT-PDMS
-- Triboelectric output gain over pure PDMS baseline: **~79 percent**
+- Triboelectric output gain over pure PDMS baseline: **about 79 percent**
 - Durability of the SE-TENG variant: **5,000 cycles** with negligible degradation
 - Number of sensors per glove: **5**, one per finger
 - Optimum nanocomposite weight ratio: **4 wt% MWCNT** in PDMS
@@ -122,6 +124,12 @@ Verified credentials:
 
 ---
 
+## Security
+
+This repository ships with secret scanning, push protection, and Dependabot security updates enabled, plus a CodeQL security scan workflow that runs on every push and pull request to `main`. The `main` branch is protected and requires the CodeQL check to pass before merge. To report a vulnerability, see [`SECURITY.md`](./SECURITY.md).
+
+---
+
 ## Status
 
 Research-grade prototype. Not a medical device under any regulatory framework as of this date. All clinical pilot, partnership, and investor inquiries are routed through the Contact section of the live site.
@@ -130,4 +138,4 @@ Research-grade prototype. Not a medical device under any regulatory framework as
 
 ## License
 
-All rights reserved. © 2026 Medtrix Technologies Pvt. Ltd.
+All rights reserved. Copyright 2026 Medtrix Technologies Pvt. Ltd.
