@@ -89,7 +89,7 @@ export function Roadmap() {
         className="relative mt-14"
       >
         <span aria-hidden className="absolute left-[28px] top-3 bottom-3 w-px bg-border md:left-[88px]" />
-        {STAGES.map((s, i) => (
+        {STAGES.map((s) => (
           <motion.li
             key={s.trl}
             variants={fadeUp}
